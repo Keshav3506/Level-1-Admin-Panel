@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Nova – Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
+  </style>
+</head>
+<body>
+
+  <h2>Quiz Nova – Admin Panel</h2>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="level">Level: <span id="levelDisplay">0</span></div>
+      <div class="question-number">Question: <span id="questionNumber">-</span></div>
+    </div>
+
+    <div class="timer" id="timer">--</div>
+
+    <button onclick="startQuiz()">▶️ Start Quiz</button>
+    <button onclick="pauseQuiz()">⏸️ Pause Quiz</button>
+    <button onclick="resumeTimer()">▶️ Resume Quiz</button>
+    <button onclick="resetValues()">🔄 Reset Quiz</button>
+    <button onclick="resetGame()">🔄 Reset Game</button>
+    <button onclick="nextRound()">⏩ Next Round</button>
+  </div>
+  
+  <table id="teams-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th id="room-header" style="cursor: pointer;">Room Number ▲</th>
+        <th>Mentor Name</th>
+        <th id="teamid-header" style="cursor: pointer;">Team ID ▲</th>
+        <th>Team Name</th>
+        <th>Status</th>
+        <th id="score-header" style="cursor: pointer;">Score ▲</th>
+        <th>Qualify</th>
+      </tr>
+    </thead>
+    <tbody id="teams-body"></tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html>

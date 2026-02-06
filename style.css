@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: #f4f4f4;
+}
+    
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.panel {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 260px;
+}
+
+.timer {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.question {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#teams-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#teams-table th, #teams-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#teams-table th {
+    background: #111;
+    color: #fff;
+}
+
+.status-WAITING {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-PLAYING {
+    color: green;
+    font-weight: bold;
+}
+
+.status-FINISHED {
+    color: gray;
+    font-weight: bold;
+}
