@@ -306,25 +306,24 @@ function resetValues(){
   quizStarted=false;
   clearInterval(adminTimer);
 
-  allDB(db=>db.ref("admin").update({
-    quizStarted:false,
-    waitingRoomOpen:true,
-    currentQuestionIndex:1,
-    timeLeft:15
-  }));
+  allDB(db=>{
+    db.ref("admin").update({
+      quizStarted:false,
+      waitingRoomOpen:true,
+      currentQuestionIndex:1,
+      timeLeft:15,
+    });
 
-  allDB(db => {
-  db.ref("teams").once("value", snapshot => {
-    snapshot.forEach(child => {
-      db.ref(`teams/${child.key}`).update({
-        quizStarted: false,
-        waitingRoomOpen: true,
-        currentQuestionIndex: 1,
-        timeLeft: 15
+    db.ref("teams").once("value",snap=>{
+      snap.forEach(child=>{
+        db.ref(`teams/${child.key}`).update({
+          score:0,
+          lastAnsweredQuestion:0
+        });
       });
     });
   });
-});
+      
   timerEl.innerText="--15--";
   questionEl.innerText="--1--";
 }
@@ -401,6 +400,4 @@ function startQuestion(){
       setTimeout(()=>quizStarted && nextQuestion(),3000);
     }
   },1000);
-
 }
-
