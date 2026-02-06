@@ -401,4 +401,5 @@ function startQuestion(){
       setTimeout(()=>quizStarted && nextQuestion(),3000);
     }
   },1000);
+
 }
