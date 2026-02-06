@@ -140,7 +140,7 @@ function renderTeams(teamsArray){
       <td>${teamData.roomNumber}</td>
       <td>${teamData.mentorName}</td>
       <td>${teamData.teamId}</td>
-      <td>${teamData.team.card}</td>
+      <td>${teamData.team.Card}</td>
       <td>${teamData.team.name}</td>
       <td>${teamData.team.status}</td>
       <td>${teamData.team.score}</td>
@@ -402,4 +402,5 @@ function startQuestion(){
     }
   },1000);
 }
+
 
