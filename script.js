@@ -186,7 +186,7 @@ document.getElementById("room-header").addEventListener("click", () => {
   sortOrder = sortOrder === "asc" ? "desc" : "asc";
 
   document.getElementById("room-header").innerText =
-    sortOrder === "asc" ? "Room Number ▲" : "Room Number ▼";
+    sortOrder === "asc" ? "Room No. ▲" : "Room No. ▼";
 
   const merged = Object.values(teamsCache).flat();
 
@@ -402,5 +402,6 @@ function startQuestion(){
     }
   },1000);
 }
+
 
 
