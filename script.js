@@ -313,18 +313,18 @@ function resetValues(){
     timeLeft:15
   }));
 
-  get(teamsRef).then((snapshot) => {
-  if (snapshot.exists()) {
-    snapshot.forEach((child) => {
-      update(ref(db, `teams/${child.key}`), {
+  allDB(db => {
+  db.ref("teams").once("value", snapshot => {
+    snapshot.forEach(child => {
+      db.ref(`teams/${child.key}`).update({
         quizStarted: false,
         waitingRoomOpen: true,
         currentQuestionIndex: 1,
         timeLeft: 15
       });
     });
-  }
-})      
+  });
+});
   timerEl.innerText="--15--";
   questionEl.innerText="--1--";
 }
@@ -403,3 +403,4 @@ function startQuestion(){
   },1000);
 
 }
+
